@@ -1,5 +1,6 @@
 using System;
 using System.Globalization;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Discord.Commands;
@@ -36,6 +37,41 @@ namespace DiscordBot.Domain.CoderDojoInfoModule {
                 Logger.LogError($"Die Termine konnte nicht eingeholt werden: {ex}");
                 await ReplyAsync("Leider kann ich dir die Termine im Moment " +
                                  "nicht sagen, weil ein Fehler aufgetreten ist .....");
+            }
+        }
+
+        [Command("banner")]
+        public async Task PrintBanner() {
+            try {
+                var figgle = Figgle.FiggleFonts.Larry3d.Render("Hi, " + Context.User.Username);
+
+                await ReplyAsync($"```{figgle}```");
+            }
+            catch (Exception ex) {
+                Logger.LogError(ex, "Error while printing Banner");
+                await ReplyAsync("Leider ist ein Fehler aufgetreten .....");
+            }
+        }
+        
+        [Command("nextdojo")]
+        public async Task NextCoderDojo() {
+            try {
+                var appointments = await ReaderService.ReadCurrentAppointments();
+                string textToPrint;
+                if (appointments.Count < 1) {
+                    textToPrint = "Keine Termine";
+                }
+                else {
+                    textToPrint = appointments.First().Date.ToString("dddd, dd.MM.yyyy", new CultureInfo("de-DE"));
+                }
+
+                var figgle = Figgle.FiggleFonts.Standard.Render(textToPrint);
+
+                await ReplyAsync($"```{figgle}```");
+            }
+            catch (Exception ex) {
+                Logger.LogError(ex, "Error while printing NextDojo");
+                await ReplyAsync("Leider ist ein Fehler aufgetreten .....");
             }
         }
     }
