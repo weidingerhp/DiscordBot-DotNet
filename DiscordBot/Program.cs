@@ -72,6 +72,7 @@ namespace DiscordBot
             services.Configure<CommandServiceConfig>(hostContext.Configuration.GetSection("Discord:CommandService"));
 
             services.AddHostedService<BotService>();
+            services.AddHostedService<CoderDojoSpeechOutputService>();
         }
     }
 }

@@ -3,7 +3,8 @@
     "DiscordBot_Template": {
       "commandName": "Project",
       "environmentVariables": {
-        "ENVIRONMENT": "Development"
+        "ENVIRONMENT": "Development",
+        "GOOGLE_APPLICATION_CREDENTIALS": "C:\\workspaces\\coderdojo\\DiscordBot-DotNet\\LoginData\\API Project-36cfe4e2d3e8.json"
       }
     }
   }
