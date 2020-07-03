@@ -1,7 +1,9 @@
 using System;
 
-namespace DiscordBot.Domain.Database.ObjectStorage.Attributes {
+namespace DiscordBot.Domain.Database.ObjectStorage.Attributes
+{
     [AttributeUsage(validOn: AttributeTargets.Method, AllowMultiple = true)]
-    public class PartitionKeyAttribute : Attribute {
+    public class PartitionKeyAttribute : Attribute
+    {
     }
 }

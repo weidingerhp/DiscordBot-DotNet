@@ -4,31 +4,33 @@ using System.Linq;
 using System.Reflection;
 using DiscordBot.Domain.Database.ObjectStorage.Attributes;
 
-namespace DiscordBot.Domain.Database.Service.Helpers {
-    public class ObjectStoreProperties {
+namespace DiscordBot.Domain.Database.Service.Helpers
+{
+    public class ObjectStoreProperties
+    {
         public List<PropertyInfo> PrimaryKeys { get; private set; }
         public PropertyInfo PartitionKey { get; private set; }
 
         public string ContainerName { get; private set; }
-        
+
         internal static ObjectStoreProperties Create(Type t)
         {
             var primaryKeys = new List<PropertyInfo>();
             PropertyInfo partitionKey = null;
-            
+
             string containerName =
                 t.GetCustomAttributes(
                         typeof(ContainerNameAttribute), true)
                     .Cast<ContainerNameAttribute>()
                     .Select(x => x.Name).FirstOrDefault() ?? t.Name;
 
-            
+
             Console.Out.WriteLine($"Container : {containerName}");
 
             foreach (var m in t.GetProperties())
             {
                 if (!m.CanRead) continue;
-                
+
                 foreach (Attribute a in m.GetCustomAttributes())
                 {
                     switch (a)
@@ -49,7 +51,7 @@ namespace DiscordBot.Domain.Database.Service.Helpers {
             {
                 throw new InvalidOperationException("Object must at least have on Primary Key Property");
             }
-            
+
             return new ObjectStoreProperties
             {
                 PartitionKey = partitionKey,
@@ -57,6 +59,5 @@ namespace DiscordBot.Domain.Database.Service.Helpers {
                 ContainerName = containerName
             };
         }
-
     }
 }
