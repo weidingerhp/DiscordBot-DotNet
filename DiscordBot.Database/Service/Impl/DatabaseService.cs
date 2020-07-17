@@ -44,7 +44,7 @@ namespace DiscordBot.Domain.Database.Service.Impl
 
         public async Task<Container> GetObjectContainerAsync<T>() where T : DatabaseObject
         {
-            return await GetObjectDatabase().GetContainer<T>();
+            return await GetObjectDatabase().GetObjectContainer<T>();
         }
     }
 }

@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lib-rcon", "Includes\lib-rc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscordBot.CoderDojoInfoModule", "DiscordBot.CoderDojoInfoModule\DiscordBot.CoderDojoInfoModule.csproj", "{C48DF2EF-B0E0-46A0-8257-228F84F4BB16}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscordBot.Database", "DiscordBot.Database\DiscordBot.Database.csproj", "{6B1AEE15-FD75-483C-941C-6AA7F7357AF0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscordBot.Database.Test", "DiscordBot.Database.Test\DiscordBot.Database.Test.csproj", "{191BF5A3-06D5-4A65-A807-9974E652F782}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +51,14 @@ Global
 		{C48DF2EF-B0E0-46A0-8257-228F84F4BB16}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C48DF2EF-B0E0-46A0-8257-228F84F4BB16}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C48DF2EF-B0E0-46A0-8257-228F84F4BB16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B1AEE15-FD75-483C-941C-6AA7F7357AF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B1AEE15-FD75-483C-941C-6AA7F7357AF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B1AEE15-FD75-483C-941C-6AA7F7357AF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B1AEE15-FD75-483C-941C-6AA7F7357AF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{191BF5A3-06D5-4A65-A807-9974E652F782}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{191BF5A3-06D5-4A65-A807-9974E652F782}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{191BF5A3-06D5-4A65-A807-9974E652F782}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{191BF5A3-06D5-4A65-A807-9974E652F782}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

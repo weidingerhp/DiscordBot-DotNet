@@ -13,7 +13,7 @@ namespace DiscordBot.Domain.Database.Service.Helpers
 
         public string ContainerName { get; private set; }
 
-        internal static ObjectStoreProperties Create(Type t)
+        public static ObjectStoreProperties Create(Type t)
         {
             var primaryKeys = new List<PropertyInfo>();
             PropertyInfo partitionKey = null;
@@ -47,7 +47,7 @@ namespace DiscordBot.Domain.Database.Service.Helpers
                 }
             }
 
-            if (primaryKeys == null)
+            if (!primaryKeys.Any())
             {
                 throw new InvalidOperationException("Object must at least have on Primary Key Property");
             }

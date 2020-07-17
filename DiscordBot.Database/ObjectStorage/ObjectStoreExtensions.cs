@@ -10,7 +10,7 @@ namespace DiscordBot.Domain.Database.Service
     public static class ObjectStoreExtensions
     {
 
-        public async static Task<Container> GetContainer<T>(this Microsoft.Azure.Cosmos.Database database) where T : DatabaseObject
+        public async static Task<Container> GetObjectContainer<T>(this Microsoft.Azure.Cosmos.Database database) where T : DatabaseObject
         {
             var props = SimpleObjectStorageHandler.GetProperties<T>();
             string partitionKey = $"/{props.PartitionKey?.Name ?? "partkey"}";
