@@ -105,7 +105,6 @@ namespace DiscordBot.Domain.CoderDojoInfoModule.ServicesImpl
                             }
 
                         }
-
                         // using (var oStream = File.Create("audio.mp3"))
                         // {
                         //     response.AudioContent.WriteTo(oStream);
